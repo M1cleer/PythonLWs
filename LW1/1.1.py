@@ -12,4 +12,4 @@ def prime_sum(number):
 
     return sum
 
-print(prime_sum(17))  # 1 + 3 = 4
+print(prime_sum(17)) # 18
