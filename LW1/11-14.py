@@ -18,6 +18,10 @@ def count_diff(string) :
 def sort_by_diff(inp_list):
 	return sorted(inp_list, key=lambda s: count_diff(s))
 
+# inp_list1 = [ "аао", "стол","полёт", "семнадцать" ]
+# print(sort_by_diff(inp_list))
+
+
 # Задача 2
 def ascii_weight(string):
     total_weight = sum(ord(i) for i in string)
