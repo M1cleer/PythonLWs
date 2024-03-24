@@ -1,4 +1,4 @@
-
+import queue
 # Задача 1
 def is_vowel(ch) :
 	ch = ch.upper()
@@ -30,15 +30,40 @@ def ascii_weight(string):
 def sqr_dev(first_wt, wt):
     return (wt - first_wt) ** 2
 
-def sort_strings_by_criteria(inp_list):
+def sort_strings_by_criteria(inp_list): 
     first_wt = ascii_weight(inp_list[0])
     
     sorted_strings = sorted(inp_list, key=lambda x: sqr_dev(first_wt, ascii_weight(x)))
     
     return sorted_strings
 
-inp_list = ["weight", "ascii", "sorting", "ASCII"]
-sorted_list = sort_strings_by_criteria(inp_list)
-print(sorted_list)
+# inp_list = ["weight", "ascii", "sorting", "ASCII"]
+# sorted_list = sort_strings_by_criteria(inp_list)
+# print(sorted_list)
 
 
+# Задача 3
+def m_avg_ascii_oft(string): # Максимальное среднее трёх символов в строке
+	l = []
+	m_sum = 0
+	for i in string:
+		l.append(ord(i))
+		sum_l = sum(l)
+		if sum_l > m_sum:
+			m_sum = sum_l
+		if len(l) == 3:
+			l.pop(0)
+
+	return m_sum / 3
+
+
+def sort_by_avg_ascii(strings):
+	if len(strings) == 0:
+		return
+	
+	first_wt = ascii_weight(strings[0])
+
+	return sorted(strings, key = lambda x: sqr_dev(first_wt, m_avg_ascii_oft(x)))
+
+inp_strings = ["abcd", "ABC", "feg", "AAA", "eee", "Aeee"]
+print(sort_by_avg_ascii(inp_strings))
