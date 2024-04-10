@@ -1,4 +1,3 @@
-import queue
 # Задача 1
 def is_vowel(ch) :
 	ch = ch.upper()
@@ -22,7 +21,7 @@ def sort_by_diff(inp_list):
 # print(sort_by_diff(inp_list))
 
 
-# Задача 2
+# Задача 4
 def ascii_weight(string):
     total_weight = sum(ord(i) for i in string)
     return total_weight / len(string)
@@ -42,7 +41,7 @@ def sort_strings_by_criteria(inp_list):
 # print(sorted_list)
 
 
-# Задача 3
+# Задача 8
 def m_avg_ascii_oft(string): # Максимальное среднее трёх символов в строке
 	l = []
 	m_sum = 0
@@ -65,5 +64,22 @@ def sort_by_avg_ascii(strings):
 
 	return sorted(strings, key = lambda x: sqr_dev(first_wt, m_avg_ascii_oft(x)))
 
-inp_strings = ["abcd", "ABC", "feg", "AAA", "eee", "Aeee"]
-print(sort_by_avg_ascii(inp_strings))
+# inp_strings = ["abcd", "ABC", "feg", "AAA", "eee", "Aeee"]
+# print(sort_by_avg_ascii(inp_strings))
+
+
+# Задача 12
+def find_base(lst): # Находим самый частый символ и количество его появлений в списке (кортеж)
+    dct = {}
+    for i in lst:
+        for j in i:
+            dct[j] = dct.get[j, 0] + 1
+
+    dct = sorted(dct.items(), key = lambda x: x[1])
+    return dct[-1]
+
+lst = ["aab", "aracddaa", "python", "hlp", "earth"]
+base = find_base(lst)
+new_lst = sorted(lst, key = lambda x : sqr_dev(x.count(base[0]), base[1]))
+
+print(new_lst)
