@@ -69,17 +69,17 @@ def sort_by_avg_ascii(strings):
 
 
 # Задача 12
-def find_base(lst): # Находим самый частый символ и количество его появлений в списке (кортеж)
+def find_base(inp_lst): # Находим самый частый символ и количество его появлений в списке (кортеж)
     dct = {}
-    for i in lst:
+    for i in inp_lst:
         for j in i:
             dct[j] = dct.get[j, 0] + 1
 
     dct = sorted(dct.items(), key = lambda x: x[1])
     return dct[-1]
 
-lst = ["aab", "aracddaa", "python", "hlp", "earth"]
-base = find_base(lst)
-new_lst = sorted(lst, key = lambda x : sqr_dev(x.count(base[0]), base[1]))
+inp_lst = ["aab", "aracddaa", "python", "hlp", "earth"]
+base = find_base(inp_lst)
+new_lst = sorted(inp_lst, key = lambda x : sqr_dev(x.count(base[0]), base[1]))
 
 print(new_lst)
