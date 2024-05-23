@@ -19,3 +19,12 @@ while True:
         prob_lst -= guess_lst
 
 print(*prob_lst)
+
+
+# Ввод
+# 10
+# 2 4 5 6 7
+# YES
+# 1 3 5 6 7 
+# NO
+# HELP
