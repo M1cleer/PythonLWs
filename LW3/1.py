@@ -122,58 +122,6 @@ class Tetragon(Polygon):
         return triangle_area(self.coordinates[0], self.coordinates[1], self.coordinates[2]) + \
                triangle_area(self.coordinates[0], self.coordinates[2], self.coordinates[3])
 
-# class Tetragon:
-#     coordinates = [[0, 0], [1, 0], [1, 1], [0, 1]]
-
-#     def __init__(self, coords=None):
-#         if coords and isinstance(coords, list) and len(coords) == 4 and all(isinstance(coord, list) for coord in coords):
-#             self.coordinates = coords
-#         else:
-#             print("Failed to save coordinates. Standard coordinates will be used")
-    
-#     def area(self):  # Площадь четырехугольника
-#         def triangle_area(p1, p2, p3):
-#             x1, y1 = p1
-#             x2, y2 = p2
-#             x3, y3 = p3
-#             return abs(0.5 * (x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2)))
-
-#         # Разбиваем четырехугольник на два треугольника и суммируем их площади
-#         return triangle_area(self.coordinates[0], self.coordinates[1], self.coordinates[2]) + \
-#                triangle_area(self.coordinates[0], self.coordinates[2], self.coordinates[3])
-
-#     def move(self, x, y):
-#         for i in self.coordinates:
-#             i[0] += x
-#             i[1] += y
-
-# class Triangle(Polygon):
-#   coordinates = [[1,0], [-1,0], [1,1]]
-
-#   def __init__(self, coords = None):
-#     if coords != None and type(coords) == list and len(coords) == 3 and type(coords[0]) == list:
-#       coordinates = coords
-#     else:
-#       print("Failed to save coordinates. Standart coordinates will be used")
-    
-#   def area(self): # Площадь треугольника
-#     x1 = self.coordinates[0][0]
-#     y1 = self.coordinates[0][1]
-
-#     x2 = self.coordinates[1][0]
-#     y2 = self.coordinates[1][1]
-
-#     x3 = self.coordinates[2][0]
-#     y3 = self.coordinates[2][1]
-    
-#     return abs(0.5 * (x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2)))    
-  
-#   def move(self, x, y):
-#     for i in self.coordinates:
-#       i[0] += x
-#       i[1] += y
-
-
 
 # Примеры использования
 triangle = Triangle([[0, 0], [4, 0], [2, 3]])
